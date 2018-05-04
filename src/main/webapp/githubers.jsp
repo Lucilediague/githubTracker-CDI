@@ -15,15 +15,12 @@
     <title>Title</title>
 </head>
 <body>
-
 <c:forEach var="githuber" items="${githubers}">
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card">
             <div class="card-body text-center">
                 <p><img class="img-fluid" src="${githuber.avatarUrl}" alt="card image"></p>
-                <h4 class="card-title">${githuber.name}</h4>
-                <p class="card-text">${githuber.name}</p>
-                <hr>
+                <p class="card-text">${githuber.login}</p>
             </div>
         </div>
     </div>
