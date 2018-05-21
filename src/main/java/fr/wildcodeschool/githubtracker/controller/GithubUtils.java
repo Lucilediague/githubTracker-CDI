@@ -5,27 +5,22 @@ import fr.wildcodeschool.githubtracker.model.Githuber;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import java.io.InputStream;
+import java.io.IOException;
 import java.net.URL;
 
 @ApplicationScoped
 public class GithubUtils {
-    private static final String GITHUB_URL = "https://api.github.com/users/";
 
     @Inject
     private ObjectMapper om;
 
-    public Githuber parseGithuber(String login){
+    public Githuber parseGithuber(String login) {
 
-        String userUrl = GITHUB_URL + login;
-        Githuber githuber = null;
-        try(InputStream is = new URL(userUrl).openStream()){
-            githuber = om.readValue(is, Githuber.class);
-
-        }catch(Exception e){
+        try {
+            return om.readValue(new URL("https://api.github.com/users/" + login), Githuber.class);
+        } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
-
-        return githuber;
     }
 }

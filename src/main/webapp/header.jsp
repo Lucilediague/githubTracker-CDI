@@ -28,7 +28,8 @@
             <a class="brand" href="#">WebApp</a>
             <div class="nav-collapse">
                 <ul class="nav">
-                    <li class="active"><a href="/githubers">Githubers</a></li>
+                    <li class="active"><a href="${pageContext.request.contextPath}/githubers">Githubers</a></li>
+                    <li><a href="${pageContext.request.contextPath}/track">Track</a></li>
                 </ul>
                 <ul class="nav pull-right">
                     <li class="divider-vertical"></li>

@@ -21,6 +21,9 @@
             <div class="card-body text-center">
                 <p><img class="img-fluid" src="${githuber.avatarUrl}" alt="card image"></p>
                 <p class="card-text">${githuber.login}</p>
+                <a href="${pageContext.request.contextPath}/untrack?login=${githuber.login}">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Untrack</button></a>
+
             </div>
         </div>
     </div>
